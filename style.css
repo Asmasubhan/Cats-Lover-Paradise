@@ -1,0 +1,569 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    padding-top: 60px; /* Space for fixed navbar */
+  }
+  
+  /* Navbar */
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: brown;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    color: whitesmoke;
+    padding-left: 10px; /* Space from the left */
+  }
+  .logo i {
+    margin-right: 10px;
+  }
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 0 15px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: transparent;
+    transition: 0.3s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+  }
+  
+  .nav-links a:hover {
+    color: yellow;
+  }
+  
+  .nav-links a:hover::after {
+    background: yellow;
+  }
+  
+  /* Menu toggle functionality for mobile */
+  .menu-toggle {
+    display: none;
+  }
+  
+  /* Responsive Navbar for Mobile */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      background-color: brown;
+      display: none;
+      width: 100%;
+    }
+  
+    .menu-toggle:checked + .menu-icon + .nav-links {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  
+    .nav-links li {
+      text-align: center;
+      margin: 10px 0;
+    }
+  
+    /* Responsive Logo Size */
+    .logo {
+      font-size: 20px;
+    }
+  }
+/* Hero Section */
+.hero-section {
+  background-image: url('images/360_F_632030974_RAsaqwiom8kfRNjHq9lnRfwCkfDz1lcG (1).jpg'); /* Replace with actual image path */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 20px; /* Padding for small screens */
+}
+
+/* Heading and Paragraph */
+.hero-section h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero-section p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.button {
+  text-decoration: none;
+  background-color: brown;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition:0.3s;
+}
+
+.button:hover {
+  background-color: yellow;
+  color: brown;
+}
+
+/* Responsive Intro Section */
+@media (max-width: 1024px) {
+  .hero-section {
+    background-size: cover;
+    height: 80vh; /* Reduced height for tablets */
+  }
+
+  .hero-section h1 {
+    font-size: 36px; /* Smaller heading */
+  }
+
+  .hero-section p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    background-size: cover;
+    background-position: center;
+    height: 70vh; /* Reduced height for tablets */
+    padding: 40px 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 30px;
+  }
+
+  .hero-section p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    background-size: cover;
+    background-position: center;
+    height: 60vh; /* Reduced height for mobile */
+    padding: 30px 10px;
+  }
+
+  .hero-section h1 {
+    font-size: 24px;
+  }
+
+  .hero-section p {
+    font-size: 14px;
+  }
+
+  .button {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+}
+/* About Us Section Styles */
+  .about-section {
+    display: flex;
+    flex-direction: column; /* Stack items on small screens */
+    padding: 20px 10px;
+    background-color: rgba(179, 160, 120, 0.9); /* Optional: Light background */
+   
+  }
+  
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    max-width: 1700px; /* Limit the width */
+    margin: 0 auto; /* Center the section */
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+  }
+  
+  .about-image {
+    flex: 1;
+    padding-right: 20px; /* Space between image and text */
+    min-width: 800px; /* Minimum width for image */
+    
+  }
+  
+  .about-image img {
+    max-width: 100%; /* Make image responsive */
+    height: 100%; /* Maintain aspect ratio */
+    border: 2px solid rgb(0, 0, 0);
+  }
+  
+  .about-text {
+    flex: 1;
+  }
+  
+  .about-text h2 {
+    font-size: 32px; /* Heading size */
+    margin-bottom: 15px; /* Space below heading */ 
+    display: inline-block;
+    border-bottom: 3px solid black; /* Underline for the heading */
+  }
+  
+  .about-text p {
+    font-size: 20px; /* Text size */
+    line-height: 1.6; /* Line height for readability */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column; /* Stack text and image on smaller screens */
+    }
+  
+    .about-image {
+      min-width: 100%; /* Ensure image is responsive */
+      max-width: 100%; /* Ensure full width */
+      padding-right: 0; /* Remove padding on small screens */
+    }
+  
+    .about-text {
+      padding: 10px;
+    }
+  }
+   /* Services Section Styles */
+   .services-section {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: rgba(240, 240, 240, 0.8); /* Light background */
+  }
+  
+  .services-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items */
+    max-width: 1200px; /* Limit the width */
+    margin: 0 auto; /* Center the section */
+  }
+  
+  .service {
+    background-color: white; /* White background for service cards */
+    border: 1px solid #ccc; /* Border for service cards */
+    border-radius: 8px; /* Rounded corners */
+    margin: 15px;
+    padding: 15px; /* Space inside cards */
+    width: calc(33% - 40px); /* Three items per row with spacing */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Shadow for cards */
+    transition: transform 0.2s; /* Animation for hover effect */
+  }
+  
+  .service img {
+    max-width: 100%; /* Responsive images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for images */
+  }
+
+  .services-section h2 {
+    font-size: 32px; /* Heading size */
+    margin-bottom: 15px;
+    display: inline-block;
+    border-bottom: 3px solid black; /* Underline for the heading */
+    }
+   
+  .service h3 {
+    font-size: 20px; /* Service title size */
+    margin: 10px 0; /* Space around title */
+  }
+  
+  .service h4{
+    font-size: 15px;
+    margin: 10px 0;
+    color:rgb(169, 169, 37);
+  }
+  
+  .buy-button {
+    background-color: brown; /* Buy button color */
+    color: white; /* Text color */
+    padding: 10px 15px; /* Button padding */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
+  }
+  
+  .buy-button:hover {
+    background-color: #f0e68c; /* Light color on hover */
+  }
+  
+  /* Responsive Service Cards */
+  @media (max-width: 768px) {
+    .service {
+      width: calc(50% - 30px); /* Two items per row on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service {
+      width: 100%; /* One item per row on mobile */
+    }
+  }
+  /* Testimonials Section Styles */
+  .testimonials-section {
+    padding: 50px 20px;
+    background-color: rgba(205, 184, 139, 0.9); /* Background color for testimonials */
+    text-align: center; /* Center align text */
+  }
+  .testimonials-section h2 {
+    font-size: 32px; /* Heading size */
+    margin-bottom: 15px;
+    display: inline-block;
+    border-bottom: 3px solid black; /* Underline for the heading */
+    }
+  .testimonial p {
+    color: rgb(0, 0, 0);
+  }
+  
+  .testimonials-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: center; /* Center the items */
+    max-width: 1200px; /* Limit the width */
+    margin: 0 auto; /* Center the section */
+  }
+  
+  .testimonial {
+    background-color: rgb(253, 233, 179); /* White background for testimonial cards */
+    border: 1px solid brown; /* Border for testimonial cards */
+    border-radius: 8px; /* Rounded corners */
+    margin: 15px;
+    padding: 15px; /* Space inside cards */
+    width: calc(30% - 40px); /* Three items per row */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Shadow for cards */
+    transition: transform 0.2s; /* Animation for hover effect */
+  }
+  
+  .testimonial-image {
+    width: 100px; /* Fixed width for circular image */
+    height: 100px; /* Fixed height for circular image */
+    overflow: hidden; /* Hide overflow */
+    border-radius: 50%; /* Make the image circular */
+    margin: 0 auto 10px; /* Center the image */
+    border: 4px solid brown; /* Black border around the image */
+  }
+  
+  .testimonial-image img {
+    width: 100%; /* Responsive image */
+    height: 100%; /* Maintain aspect ratio */
+  }
+  
+
+  
+  .testimonial h3 {
+    margin-top: 10px; /* Space above name */
+    font-size: 16px; /* Name size */
+  }
+  
+  /* Responsive Testimonials */
+  @media (max-width: 768px) {
+    .testimonial {
+        width: calc(45% - 30px); /* Two items per row on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .testimonial {
+        width: 100%; /* One item per row on mobile */
+    }
+  }
+  /* Contact Section Styles */ 
+  .contact-section {
+    display: flex;
+    align-items: center; /* Align image and form vertically in the center */
+    justify-content: center; /* Center-align them horizontally */
+    padding: 50px 20px;
+    background-color:whitesmoke; /* Light background */
+    flex-wrap: wrap; /* Allow wrapping on small screens */ 
+  }
+
+  .contact-section h2 {
+    margin-bottom: 20px; /* Add gap between heading and form */
+    font-size: 24px; /* You can adjust font size as needed */
+    text-decoration: underline;
+    text-align: center;
+  }
+  .contact-image {
+    max-width: 50%; /* Adjust as needed to control the image size */
+    margin-right: 150px; /* Space between image and form */
+  }
+  
+  .contact-image img {
+    width: 100%; /* Full width inside its container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .contact-form {
+    width: 100%; /* Take full width on small screens */
+    max-width: 500px; /* Limit form width */
+    padding: 20px;
+    background-color: rgba(200, 200, 200, 0.9);
+    border-radius: 8px; /* Rounded corners */
+    border: 2px solid lightslategray;
+  
+  }
+  
+  .contact-form input, .contact-form textarea {
+    width: 100%; /* Full width inputs */
+    padding: 10px;
+    margin-bottom: 15px; /* Space between fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    border: 1px solid #0a0a0a; /* Border for inputs */
+  }
+  
+  .contact-form button {
+    width: 40%;
+    padding: 12px;
+    background-color: brown;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .contact-form button:hover {
+    background-color: yellow;
+  }
+
+ /* Media Queries for responsiveness */
+/* Large laptops (1024px) */
+@media (max-width: 1024px) {
+  .contact-section {
+      flex-direction: row;
+      align-items: flex-start;
+      
+  }
+
+  .contact-image,.contact-form {
+      max-width: 45%; /* Ensure consistent width */
+      margin-right: 15px; /* Consistent spacing */
+  }
+
+  .contact-image img {
+      width: 80%;
+      height: auto;
+  }
+}
+
+/* Tablet screens (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contact-section {
+      flex-direction: row;
+      align-items: flex-start;
+  }
+
+  .contact-image, .contact-form {
+      max-width: 45%;
+      margin-right: 15px;
+  }
+}
+
+/* Mobile screens (below 768px) */
+@media (max-width: 767px) {
+  .contact-section {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .contact-image {
+      max-width: 100%;
+      margin-bottom: 20px;
+  }
+
+  .contact-form {
+      max-width: 100%;
+  }
+}
+
+  .footer {
+    background-color: black; /* Black background for footer */
+    color: white; /* White text color */
+    padding: 20px 0; /* Padding for footer */
+    text-align: center; /* Center align text */
+  }
+  
+  .footer-content {
+    max-width: 1200px; /* Limit footer content width */
+    margin: 0 auto; /* Center the footer content */
+  }
+  
+  .social-media {
+    margin-top: 10px; /* Space above social media icons */
+  }
+  
+  .social-media a {
+    color: white; /* Icon color */
+    margin: 0 10px; /* Spacing between icons */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 20px; /* Icon size */
+    transition: color 0.3s; /* Transition for hover effect */
+
+  }
+  
+  .social-media a:hover {
+    color: yellow; /* Color change on hover */
+  }
+
+  /* Responsive Footer */
+  @media (max-width: 768px) {
+    .social-media {
+      display: flex;
+      justify-content: center; /* Center icons on smaller screens */
+    }
+  }
